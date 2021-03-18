@@ -1,0 +1,1009 @@
+﻿@font-face {
+    font-family: "Reef";
+    src: url('Reef.otf');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+body {
+    background-color: #1E1E1E;
+}
+
+h2 {
+    text-align: center;
+    font-family: Oxygen;
+    color: white;
+    font-size: 50px;
+}
+
+.elt-nav {
+    color: #DBDBDB;
+    font-family: "Reef";
+    width: 200px;
+    padding: 20px;
+    text-decoration: none;
+    font-size: 30px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+    .elt-nav a {
+        cursor: pointer;
+    }
+
+    .search-bar {
+        height: 34px;
+        border-radius: 1000px;
+        padding-left: 20px;
+        font-family: 'Karla', sans-serif;
+        color: #7C7C7C;
+        border: none;
+        width: 30%;
+    }
+
+.each-post {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    background-color: #272727;
+    padding-bottom: 50px;
+    border-radius: 10px;
+}
+
+.minia-post {
+    width: 100%;
+    height: 400px;
+    /* background-image: url('../img_posts/minia.jpg'); */
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.top-post {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 20px;
+}
+
+.top-post h3 {
+    font-family: 'Reef';
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    font-style: italic;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.top-post i {
+    font-size: 30px;
+    color: lightgray;
+    cursor: pointer;
+}
+
+.top-post i:hover {
+    color: rgb(206, 37, 63);
+    transform: scale(1.3);
+}
+
+.infos-post {
+    padding-left: 10%;
+    display: flex;
+    margin-top: 25px;
+}
+
+.infos-post p, .top-post div p, #formulaire p.rouge, .nb_like, .footer-post {
+    margin-left: 20px;
+    font-family: 'Reef';
+    font-size: 20px;
+    color: white;
+}
+
+.footer-post {
+    margin-top: 50px;
+}
+
+.footer-post a {
+    text-decoration: none;
+    color: rgb(206, 37, 63);
+}
+
+#post-uniq .nb_like {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.file-actualite, #formInscription {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.rouge {
+    color: red;
+}
+
+#formInscription input {
+    margin-bottom: 20px;
+    height: 54px;
+    border-radius: 1000px;
+    padding-left: 20px;
+    width: calc(100% - 20px);
+    font-family: 'Karla', sans-serif;
+    color: #7C7C7C;
+    border: none;
+}
+
+.each-post button, #formInscription input:last-child {
+    margin-left: 5%;
+    padding: 0px 20px 0px 20px;
+    margin-top: 25px;
+    background-color: #CE253F;
+    color: white;
+    font-family: "Reef";
+    font-size: 24px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    width: max-content;
+}
+
+#formInscription input:last-child {
+    margin-left: 0px;
+    width: 100% !important;
+}
+
+#connexionPopup {
+    position: relative;
+}
+
+#divConnexion {
+    width: 300px;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    top: 70px;
+    left: 0px;
+    border-radius: 7px;
+    z-index: 99;
+}
+
+#divConnexion form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+}
+
+#divConnexion h4, #div-deconnexion h4, #non-connecte-popup h4, #mdp-check-popup h4, #form-amis form label {
+    font-family: 'Reef';
+    font-size: 24px;
+    text-align: center;
+    color: #CE253F;
+}
+
+#divConnexion label, #div-deconnexion p, #non-connecte-popup p, #mdp-check-popup p {
+    font-family: 'Reef';
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: black !important;
+}
+
+.each-input-connexion {
+    display: flex;
+    flex-direction: column;
+}
+
+.each-input-connexion input {
+    border: solid 1px grey;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#divConnexion p {
+    font-family: "Reef";
+    color: #CE253F;
+    font-size: 20px;
+    text-align: center;
+    display: none;
+}
+
+.croix-fermer {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+}
+
+#divConnexion button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Connexion */
+#li-connexion, #li-compte {
+    position: relative;
+}
+
+#divConnexion, #div-deconnexion, #non-connecte-popup, #mdp-check-popup {
+    width: 300px;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    top: 50px;
+    left: -85px;
+    border-radius: 7px;
+    z-index: 99;
+    display: none;
+}
+
+#divConnexion form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+}
+
+    #divConnexion h4, #div-deconnexion h4, #non-connecte-popup h4, #mdp-check-popup h4, #form-amis form label {
+        font-family: 'Reef';
+        font-size: 24px;
+        text-align: center;
+        color: #CE253F;
+    }
+
+    #divConnexion label, #div-deconnexion p, #non-connecte-popup p, #mdp-check-popup p {
+        font-family: 'Reef';
+        font-size: 20px;
+        margin-bottom: 5px;
+        color: black !important;
+        margin-top: 5px;
+    }
+
+.each-input-connexion {
+    display: flex;
+    flex-direction: column;
+}
+
+    .each-input-connexion input {
+        border: solid 1px grey;
+        background-color: white;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+#divConnexion button, #div-deconnexion button, .each-post button, #non-connecte-popup button, #mdp-check-popup button {
+    background-color: #CE253F;
+    color: white;
+    font-family: "Reef";
+    font-size: 24px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+#divConnexion p {
+    font-family: "Reef";
+    color: #CE253F;
+    font-size: 20px;
+    text-align: center;
+    display: none;
+}
+
+.croix-fermer {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    cursor: pointer;
+    color: black;
+}
+
+/* Deconnexion */
+
+#div-deconnexion, #non-connecte-popup, #mdp-check-popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 200px;
+}
+
+#div-deconnexion {
+    top: 75px;
+}
+
+    #div-deconnexion .croix-fermer, #mdp-check-popup .croix-fermer {
+        top: 5px;
+        right: 5px;
+    }
+
+/* File d actualite */
+
+#file-post, #profil, #post-uniq, #creation_post, #liste-groupes {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.each-post {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    background-color: #272727;
+    padding-bottom: 50px;
+    border-radius: 10px;
+}
+
+.minia-post {
+    width: 100%;
+    height: 400px;
+    /* background-image: url('../img_posts/minia.jpg'); */
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.top-post {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 20px;
+}
+
+    .top-post h3 {
+        font-family: 'Reef';
+        font-size: 30px;
+        text-align: center;
+        color: white;
+        font-style: italic;
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    .top-post i {
+        font-size: 30px;
+        color: lightgray;
+        cursor: pointer;
+    }
+
+        .top-post i:hover {
+            color: rgb(206, 37, 63);
+            transform: scale(1.3);
+        }
+
+.infos-post {
+    padding-left: 10%;
+    display: flex;
+    margin-top: 25px;
+}
+
+    .infos-post p, .top-post div p, #formulaire p.rouge, .nb_like, .footer-post {
+        margin-left: 20px;
+        font-family: 'Reef';
+        font-size: 20px;
+        color: white;
+    }
+
+.footer-post {
+    margin-top: 50px;
+}
+
+    .footer-post a {
+        text-decoration: none;
+        color: rgb(206, 37, 63);
+    }
+
+#post-uniq .nb_like {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+#post-uniq .top-post {
+    margin-bottom: 15px;
+}
+
+.vert {
+    color: green !important;
+}
+
+.orange {
+    color: orange !important;
+}
+
+.gris {
+    color: lightgray;
+}
+
+.rouge, .amis-grp-add i {
+    color: rgb(206, 37, 63) !important;
+}
+
+#formulaire p.rouge {
+    display: none;
+    margin-bottom: 15px;
+}
+
+.each-post button {
+    width: max-content;
+    margin-left: 5%;
+    padding: 0px 20px 0px 20px;
+    margin-top: 25px;
+}
+
+.top-post div {
+    display: flex;
+    align-items: center;
+}
+
+    .top-post div p {
+        margin-right: 10px;
+    }
+
+/* Div non connecte */
+
+#non-connecte-popup, #mdp-check-popup {
+    left: calc(50% - 150px);
+    top: 10px;
+    padding: 10px;
+}
+
+    #non-connecte-popup button {
+        width: 48%;
+    }
+
+    #non-connecte-popup p {
+        text-align: center;
+    }
+
+    #non-connecte-popup .croix-fermer {
+        top: 5px;
+        right: 5px;
+    }
+
+    #non-connecte-popup div {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* Popup check mdp */
+
+    #mdp-check-popup div {
+        display: flex;
+        justify-content: center;
+    }
+
+/* Footer */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    align-self: center;
+    align-items: center;
+    background: rgb(71,149,240);
+    background: linear-gradient(0deg, rgba(71,149,240,1) 0%, rgba(71,149,240,0.8407563709077381) 62%, rgba(52,82,117,0) 100%);
+}
+
+#liens-footer {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+    #liens-footer a {
+        font-family: 'Karla', sans-serif;
+        color: #212121;
+        margin-bottom: 20px;
+        text-decoration: none;
+    }
+
+h2 {
+    font-family: 'Reef';
+    text-align: center;
+    font-size: 5em;
+    color: whitesmoke;
+    margin-bottom: 50px;
+}
+
+/* Backoffice table */
+#table-comptes, #table-posts, #table-likes, #table-amis, #form-amis, #form-amis form, #div-posts-backoffice, #div-likes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h3 {
+    font-family: 'Reef';
+    text-align: center;
+    font-size: 2em;
+    color: whitesmoke;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+table tbody td, table thead th {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Reef';
+}
+
+table thead th {
+    vertical-align: middle;
+    height: 50px;
+    background: #000;
+    color: white;
+}
+
+    table thead th:first-child {
+        border-radius: 15px 0px 0px 0px;
+    }
+
+    table thead th:last-child {
+        border-radius: 0px 15px 0px 0px;
+    }
+
+table tbody td {
+    height: 30px;
+    vertical-align: middle;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #E0E0E0;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #7B7B7B;
+    color: white;
+}
+
+#btn-voir-compte, #btn-voir-posts, #btn-voir-likes, #btn-voir-amis {
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#form-amis form {
+    width: 50%;
+}
+
+#form-amis select {
+    width: 50%;
+}
+
+#form-amis form label, label {
+    color: white;
+    margin-bottom: 15px;
+    font-family: 'Reef';
+}
+
+.row-backoffice {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+    .row-backoffice:nth-child(even) {
+        background-color: #3A3A3A;
+    }
+
+#search-friends, #search-post {
+    position: fixed;
+    margin-left: 20px;
+    width: 300px;
+}
+
+#search-post {
+    top: 230px;
+}
+
+#search-friends h3, #search-post h3 {
+    text-align: left;
+}
+
+#search-friends input, #search-post input, #create_groupe input {
+    height: 30px;
+    margin: 0px;
+}
+
+h6 {
+    font-family: 'Reef';
+    font-size: 20px;
+    color: white;
+}
+
+.name-profil {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+    .name-profil button, #create_groupe button {
+        height: auto;
+        font-size: 18px;
+        padding: 0px 20px 0px 20px;
+    }
+
+    .name-profil span {
+        font-weight: bold;
+    }
+
+    .name-profil h6 {
+        margin-right: 30px;
+    }
+
+#top-profil {
+    padding-bottom: 20px;
+    border-bottom: solid 1px white;
+    margin-bottom: 20px;
+}
+
+    #top-profil .name-profil:first-child {
+        justify-content: space-between;
+    }
+
+#post-profil {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.post-profil {
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.hover-post {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+    font-family: 'Reef';
+}
+
+    .hover-post i {
+        margin-left: 20px;
+        margin-right: 5px;
+    }
+
+#post-uniq h3 {
+    font-size: 50px;
+}
+
+.contenu_post h4, .contenu_post h5, .contenu_post h6, .contenu_post p, .contenu_post li, h5 {
+    font-family: 'Reef';
+    color: white;
+    width: 100%;
+}
+
+.contenu_post h4 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.contenu_post h5 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.contenu_post h6 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.contenu_post p {
+    font-size: 20px;
+    text-align: justify;
+    text-indent: 10%;
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+
+.contenu_post img {
+    max-width: 100%;
+    text-align: center;
+}
+
+.contenu_post ul {
+    list-style-type: disc;
+    margin-left: 5%;
+    margin-bottom: 25px;
+}
+
+.contenu_post ol {
+    list-style-type: decimal;
+    margin-left: 5%;
+    margin-bottom: 25px;
+}
+
+.contenu_post li {
+    font-size: 22px;
+}
+
+.ajouter-bloc {
+    height: 100px;
+    border: dashed white 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Reef';
+    color: white;
+    font-size: 25px;
+    margin-top: 30px;
+    position: relative;
+}
+
+    .ajouter-bloc i {
+        margin-right: 20px;
+    }
+
+#popup-choix-bloc {
+    position: absolute;
+    width: 300px;
+    height: 70px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.each-bloc {
+    color: gray;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    border: solid gray 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.elt_post {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.opt_elt {
+    position: absolute;
+    left: -40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    font-size: 20px;
+    color: white;
+}
+
+    .opt_elt i {
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    .opt_elt .fa-times {
+        color: rgb(206, 37, 63);
+    }
+
+.change_text {
+    position: absolute;
+    min-width: 100px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 99;
+}
+
+    .change_text textarea {
+        min-width: 100px;
+        min-height: 100px;
+    }
+
+    .change_text button {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+#send-post {
+    margin-top: 30px;
+}
+
+#send-form-post {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#img_apercu {
+    color: white;
+}
+
+#create_groupe {
+    position: absolute;
+    right: 20px;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    text-align: right;
+    z-index: 1;
+}
+
+    #create_groupe input {
+        text-align: right;
+        padding: 0px;
+        padding-right: 20px;
+        margin-right: 20px;
+        width: calc(100% - 20px);
+    }
+
+    #create_groupe button {
+        margin-top: 15px;
+    }
+
+#select-amis-grp {
+    height: 300px;
+    border-radius: 5px;
+    border: solid 1px white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    overflow: auto;
+}
+
+.amis-grp-add {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Reef';
+    color: white;
+    font-size: 20px;
+}
+
+    .amis-grp-add i {
+        cursor: pointer;
+    }
+
+#create_groupe label {
+    font-size: 20px;
+    margin: 0px;
+    user-select: none;
+    cursor: pointer;
+}
+
+#create_groupe .row {
+    align-items: center;
+    justify-content: space-around;
+}
+
+#isPrivate {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+#alert-msg, #success-msg {
+    font-family: 'Reef';
+    font-size: 20px;
+    max-width: 210px;
+    text-align: center;
+}
+
+.my-each-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: solid 1px white;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+}
+
+    .my-each-group div:not(.btns-grps) {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .my-each-group div h3 {
+        margin-top: 0px;
+    }
+
+    .my-each-group div p {
+        font-family: 'Reef';
+        font-size: 20px;
+        margin-bottom: 5px;
+        color: white;
+    }
+
+    .my-each-group button {
+        height: 30px;
+        font-size: 20px;
+        padding: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+#all-groupes {
+    margin-top: 50px;
+}
+
+.btns-grps {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 70px;
+}
+
+.com-post, #add-com {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.com-post a {
+    color: rgb(206, 37, 63);
+    font-family: 'Reef';
+    text-align: right;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.each-com-post {
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 35px;
+    padding: 20px;
+}
+
+    .each-com-post p {
+        font-family: 'Oxygen', sans-serif;
+    }
+
+#textarea-add-com {
+    border-radius: 15px;
+    margin-bottom: 10px;
+    max-width: 100%;
+    min-height: 150px;
+    padding: 10px;
+}
+
+#sinscrireLink {
+    text-align: center;
+    color: dodgerblue;
+    font-size: 20px;
+    text-decoration: none;
+    margin-top: 10px;
+    display: block;
+}
