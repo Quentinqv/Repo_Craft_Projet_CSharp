@@ -165,7 +165,7 @@ h2 {
     position: relative;
 }
 
-#divConnexion {
+#Header_divConnexion {
     width: 300px;
     position: absolute;
     background-color: white;
@@ -176,21 +176,21 @@ h2 {
     z-index: 99;
 }
 
-#divConnexion form {
+#Header_divConnexion form {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     position: relative;
 }
 
-#divConnexion h4, #div-deconnexion h4, #non-connecte-popup h4, #mdp-check-popup h4, #form-amis form label {
+#Header_divConnexion h4, #div-deconnexion h4, #non-connecte-popup h4, #mdp-check-popup h4, #form-amis form label {
     font-family: 'Reef';
     font-size: 24px;
     text-align: center;
     color: #CE253F;
 }
 
-#divConnexion label, #div-deconnexion p, #non-connecte-popup p, #mdp-check-popup p {
+#Header_divConnexion label, #div-deconnexion p, #non-connecte-popup p, #mdp-check-popup p {
     font-family: 'Reef';
     font-size: 20px;
     margin-bottom: 5px;
@@ -209,7 +209,7 @@ h2 {
     padding: 5px;
 }
 
-#divConnexion p {
+#Header_divConnexion p {
     font-family: "Reef";
     color: #CE253F;
     font-size: 20px;
@@ -224,7 +224,7 @@ h2 {
     cursor: pointer;
 }
 
-#divConnexion button {
+#Header_divConnexion button {
     width: 100%;
     margin-top: 20px;
 }
@@ -234,7 +234,7 @@ h2 {
     position: relative;
 }
 
-#divConnexion, #div-deconnexion, #non-connecte-popup, #mdp-check-popup {
+#Header_divConnexion, #div-deconnexion, #non-connecte-popup, #mdp-check-popup {
     width: 300px;
     position: absolute;
     background-color: white;
@@ -246,21 +246,21 @@ h2 {
     display: none;
 }
 
-#divConnexion form {
+#Header_divConnexion form {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     position: relative;
 }
 
-    #divConnexion h4, #div-deconnexion h4, #non-connecte-popup h4, #mdp-check-popup h4, #form-amis form label {
+    #Header_divConnexion h4, #div-deconnexion h4, #non-connecte-popup h4, #mdp-check-popup h4, #form-amis form label {
         font-family: 'Reef';
         font-size: 24px;
         text-align: center;
         color: #CE253F;
     }
 
-    #divConnexion label, #div-deconnexion p, #non-connecte-popup p, #mdp-check-popup p {
+    #Header_divConnexion label, #div-deconnexion p, #non-connecte-popup p, #mdp-check-popup p {
         font-family: 'Reef';
         font-size: 20px;
         margin-bottom: 5px;
@@ -273,14 +273,19 @@ h2 {
     flex-direction: column;
 }
 
-    .each-input-connexion input {
-        border: solid 1px grey;
-        background-color: white;
-        border-radius: 5px;
-        padding: 5px;
-    }
+.each-input-connexion input {
+    border: solid 1px grey;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
 
-#divConnexion button, #div-deconnexion button, .each-post button, #non-connecte-popup button, #mdp-check-popup button {
+#Header_divConnexion input[type=submit] {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#Header_divConnexion input[type=submit], #div-deconnexion button, .each-post button, #non-connecte-popup button, #mdp-check-popup button {
     background-color: #CE253F;
     color: white;
     font-family: "Reef";
@@ -290,7 +295,7 @@ h2 {
     cursor: pointer;
 }
 
-#divConnexion p {
+#Header_divConnexion p {
     font-family: "Reef";
     color: #CE253F;
     font-size: 20px;
@@ -999,7 +1004,7 @@ h6 {
     padding: 10px;
 }
 
-#sinscrireLink {
+#Header_sinscrireLink {
     text-align: center;
     color: dodgerblue;
     font-size: 20px;

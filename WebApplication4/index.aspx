@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="WebApplication4.Index" %>
-<!-- <%@ Register Src="~/WebUserControl1.ascx" TagName="WebControl" TagPrefix="TWebControl"%> -->
+<!-- <%@ Register Src="~/header.ascx" TagName="HeaderControl" TagPrefix="THeaderControl"%> -->
 
 <!DOCTYPE html>
 
@@ -14,35 +14,9 @@
 </head>
     <body>
         <form id="form1" runat="server">
-        <div id="header" style="padding: 5px 5% 5px 5%; display: flex; justify-content: space-between; align-items: center;">
-            <asp:HyperLink ID="linkLogo" runat="server" NavigateUrl="~/index.aspx">
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/logo.png" Width="259px" />
-            </asp:HyperLink>
-            <input id="Text1" type="search" class="search-bar" placeholder="Rechercher un post ou un ami.." /><div class="elt-nav">
-                <ul ID="BulletedList1" runat="server">
-                    <li id="connexionPopup">
-                        <asp:HyperLink ID="textMoncompte" runat="server" CssClass="link-header">Mon compte</asp:HyperLink>
-                        <div id="divConnexion">
-                            <form>
-                                <i class="croix-fermer fa fa-xs fa-times"></i>
-                                <h4>Connexion</h4>
-                                <div class="each-input-connexion">
-                                    <label>Pseudo :</label>
-                                    <input type="text" id="pseudoConnect" name="pseudo" placeholder="Pseudo..." runat="server">
-                                </div>
-                                <div class="each-input-connexion">
-                                    <label>Mot de passe :</label>
-                                    <input type="password" id="passwordConnect" name="password" placeholder="Mot de passe..." runat="server">
-                                </div>
-                                <p>Mot de passe incorrect !</p>
-                                <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click_Connect" Text="Submit" />
-                                <asp:HyperLink ID="sinscrireLink" runat="server" CssClass="link-header" NavigateUrl="~/inscription.aspx">S'inscrire !</asp:HyperLink>
-                            </form>
-                        </div>
-                    </li>
-                </ul>
-        </div>
-        </div>
+
+        <THeaderControl:HeaderControl ID="Header" runat="server"/>
+        
         <div class="file-actualite">
             <div class="each-post" data-idpost='0'>
                 <div class="minia-post" style="background-image: url('https://pcorrec.go.yo.fr/Craft/assets/img_posts/img5fda21dec6368.jpg')"></div>

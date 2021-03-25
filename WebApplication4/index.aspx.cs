@@ -38,19 +38,11 @@ namespace WebApplication4
 
 			namePost.Text = results[0][1];
 
-			Response.Write(Session["pseudo"]);
-			Response.Write(Session["email"]);
+			/*Response.Write(Session["pseudo"]);
+			Response.Write(Session["email"]);*/
 
 			this.date = DateTime.Now;
 
 		}
-
-		protected void btnSubmit_Click_Connect(object sender, EventArgs e)
-        {
-			string output = Connexion.ToConnect(pseudoConnect.Value, passwordConnect.Value);
-			Response.Write(output);
-			Response.Write(Session["pseudo"]);
-			Response.Write(Session["email"]);
-        }
 	}
 }

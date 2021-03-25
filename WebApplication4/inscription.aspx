@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="inscription.aspx.cs" Inherits="WebApplication4.Inscription" %>
+<!-- <%@ Register Src="~/header.ascx" TagName="HeaderControl" TagPrefix="THeaderControl"%> -->
 
 <!DOCTYPE html>
 
@@ -12,45 +13,19 @@
     <title>Craft - Inscription</title>
 </head>
 <body>
-     <div id="header" style="padding: 5px 5% 5px 5%; display: flex; justify-content: space-between; align-items: center;">
-            <asp:HyperLink ID="linkLogo" runat="server" NavigateUrl="~/index.aspx">
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/logo.png" Width="259px" />
-            </asp:HyperLink>
-            <input id="Text1" type="search" class="search-bar" placeholder="Rechercher un post ou un ami.." /><div class="elt-nav">
-                <ul ID="BulletedList1" runat="server">
-                    <li id="connexionPopup">
-                        <asp:HyperLink ID="textMoncompte" runat="server" CssClass="link-header">Mon compte</asp:HyperLink>
-                        <div id="divConnexion">
-                            <form>
-                                <i class="croix-fermer fa fa-xs fa-times"></i>
-                                <h4>Connexion</h4>
-                                <div class="each-input-connexion">
-                                    <label>Pseudo :</label>
-                                    <input type="text" name="pseudo" placeholder="Pseudo...">
-                                </div>
-                                <div class="each-input-connexion">
-                                    <label>Mot de passe :</label>
-                                    <input type="password" name="password" placeholder="Mot de passe...">
-                                </div>
-                                <p>Mot de passe incorrect !</p>
-                                <button>Se connecter</button>
-                                <asp:HyperLink ID="sinscrireLink" runat="server" CssClass="link-header" NavigateUrl="~/inscription.aspx">S'inscrire !</asp:HyperLink>
-                            </form>
-                        </div>
-                    </li>
-                </ul>
-        </div>
-        </div>
-     <div>
-         <h2>Inscription</h2>
-         <form id="formInscription" runat="server">
-             <input id="pseudoForm" name="pseudo" placeholder="Pseudo.." required="required" type="text" runat="server"/>
-             <input id="emailForm" name="email" placeholder="Email.." required="required" type="email" runat="server"/>
-             <input id="password1Form" minlength="8" name="password-1" placeholder="Mot de passe.." required="required" type="password" runat="server"/>
-             <input id="password2Form" minlength="8" name="password-2" placeholder="Confirmation du mot de passe.." required="required" type="password" runat="server"/>
-             <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Submit" />
-         </form>
-     </div>
-     <script src="assets/script/main.js"></script>
+    <form id="form2" runat="server">
+         <THeaderControl:HeaderControl ID="Header" runat="server"/>
+         <div>
+             <h2>Inscription</h2>
+             <form id="formInscription">
+                 <input id="pseudoForm" name="pseudo" placeholder="Pseudo.." required="required" type="text" runat="server"/>
+                 <input id="emailForm" name="email" placeholder="Email.." required="required" type="email" runat="server"/>
+                 <input id="password1Form" minlength="8" name="password-1" placeholder="Mot de passe.." required="required" type="password" runat="server"/>
+                 <input id="password2Form" minlength="8" name="password-2" placeholder="Confirmation du mot de passe.." required="required" type="password" runat="server"/>
+                 <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Submit" />
+             </form>
+         </div>
+    </form>
+    <script src="assets/script/main.js"></script>
 </body>
 </html>

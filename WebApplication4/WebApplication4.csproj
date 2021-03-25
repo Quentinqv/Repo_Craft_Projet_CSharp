@@ -119,17 +119,24 @@
     <Content Include="assets\css\reset.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\script\main.js" />
+    <Content Include="header.ascx" />
     <Content Include="index.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Images\logo.png" />
     <Content Include="Web.config" />
     <Content Include="inscription.aspx" />
-    <Content Include="WebUserControl1.ascx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connexion.cs" />
     <Compile Include="DatabaseLogin.cs" />
     <Compile Include="Hasher.cs" />
+    <Compile Include="header.ascx.cs">
+      <DependentUpon>header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="header.ascx.designer.cs">
+      <DependentUpon>header.ascx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -147,13 +154,6 @@
     </Compile>
     <Compile Include="inscription.aspx.designer.cs">
       <DependentUpon>inscription.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebUserControl1.ascx.cs">
-      <DependentUpon>WebUserControl1.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebUserControl1.ascx.designer.cs">
-      <DependentUpon>WebUserControl1.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

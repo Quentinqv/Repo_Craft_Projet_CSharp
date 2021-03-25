@@ -1,15 +1,15 @@
 ﻿$(document).ready(function () {
-    $('#divConnexion').hide()
+    $('#Header_divConnexion').hide()
 
-    $('#textMoncompte').on('click', function () {
-        if ($('#divConnexion').css('display') == 'none') {
-            $('#divConnexion').slideDown()
+    $('#Header_textMoncompte').on('click', function () {
+        if ($('#Header_divConnexion').css('display') == 'none') {
+            $('#Header_divConnexion').slideDown()
             return true
         }
-        $('#divConnexion').slideUp()
+        $('#Header_divConnexion').slideUp()
     })
 
-    $('#divConnexion .croix-fermer').on('click', function () {
-        $('#divConnexion').slideUp()
+    $('#Header_divConnexion .croix-fermer').on('click', function () {
+        $('#Header_divConnexion').slideUp()
     })
 });
