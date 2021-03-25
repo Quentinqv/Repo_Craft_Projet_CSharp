@@ -44,11 +44,11 @@
      <div>
          <h2>Inscription</h2>
          <form id="formInscription" runat="server">
-             <input id="pseudo-form" name="pseudo" placeholder="Pseudo.." required="required" type="text" />
-             <input id="email-form" name="email" placeholder="Email.." required="required" type="email" />
-             <input id="password1-form" minlength="8" name="password-1" placeholder="Mot de passe.." required="required" type="password" />
-             <input id="password2-form" minlength="8" name="password-2" placeholder="Confirmation du mot de passe.." required="required" type="password" />
-             <asp:Button ID="Button1" runat="server" Text="S'inscrire" />
+             <input id="pseudoForm" name="pseudo" placeholder="Pseudo.." required="required" type="text" runat="server"/>
+             <input id="emailForm" name="email" placeholder="Email.." required="required" type="email" runat="server"/>
+             <input id="password1Form" minlength="8" name="password-1" placeholder="Mot de passe.." required="required" type="password" runat="server"/>
+             <input id="password2Form" minlength="8" name="password-2" placeholder="Confirmation du mot de passe.." required="required" type="password" runat="server"/>
+             <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Submit" />
          </form>
      </div>
      <script src="assets/script/main.js"></script>

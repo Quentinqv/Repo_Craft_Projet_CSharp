@@ -47,7 +47,7 @@
             <div class="each-post" data-idpost='0'>
                 <div class="minia-post" style="background-image: url('https://pcorrec.go.yo.fr/Craft/assets/img_posts/img5fda21dec6368.jpg')"></div>
                 <div class="top-post">
-                    <h3>Mon DIY</h3>
+                    <h3>Mon DIY <asp:Label runat="server" id="namePost"></asp:Label></h3>
                     <div style="display: flex; align-items: center;">
                         <p class="nb_like" style="margin-right: 10px">521</p>
                         <i class="fa fa-heart rouge"></i>
