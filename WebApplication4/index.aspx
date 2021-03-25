@@ -28,14 +28,14 @@
                                 <h4>Connexion</h4>
                                 <div class="each-input-connexion">
                                     <label>Pseudo :</label>
-                                    <input type="text" name="pseudo" placeholder="Pseudo...">
+                                    <input type="text" id="pseudoConnect" name="pseudo" placeholder="Pseudo..." runat="server">
                                 </div>
                                 <div class="each-input-connexion">
                                     <label>Mot de passe :</label>
-                                    <input type="password" name="password" placeholder="Mot de passe...">
+                                    <input type="password" id="passwordConnect" name="password" placeholder="Mot de passe..." runat="server">
                                 </div>
                                 <p>Mot de passe incorrect !</p>
-                                <button>Se connecter</button>
+                                <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click_Connect" Text="Submit" />
                                 <asp:HyperLink ID="sinscrireLink" runat="server" CssClass="link-header" NavigateUrl="~/inscription.aspx">S'inscrire !</asp:HyperLink>
                             </form>
                         </div>

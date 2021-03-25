@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using HashLibrary;
+using DatabaseLogin;
+using ConnexionClass;
 
 namespace WebApplication4
 {
@@ -21,13 +23,8 @@ namespace WebApplication4
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            
-            var con = new MySqlConnection(cs);
+            var con = Database.Connect();
             con.Open();
-
-
-
-
 
             //Session["Name"] = txtName.Text;
             string pseudo = pseudoForm.Value;
@@ -35,20 +32,44 @@ namespace WebApplication4
             string password1 = Hasher.HashString(password1Form.Value);
             string password2 = Hasher.HashString(password2Form.Value);
 
-            //Response.Write(password1);
-            Response.Write(pseudo);
-            Response.Write(email);
-            Response.Write(password1);
-            Response.Write(password2);
 
-            string sql = "INSERT INTO Compte(pseudo, mdp, email, date_nais, avatar, tel, date_inscription) values('"+pseudo+"', '"+password1+"', '"+email+"', '2021-03-25', 'defaut.png', '060600516', '2021-03-25')";
+            string sql = "SELECT COUNT(*) FROM Compte WHERE pseudo='"+pseudo+"'";
             var cmd = new MySqlCommand(sql, con);
-            /*cmd.Parameters.AddWithValue("@pseudo", pseudo);
-            cmd.Parameters.AddWithValue("@mdp", password1);
-            cmd.Parameters.AddWithValue("@email", email);*/
-            /*cmd.Prepare();*/
-            cmd.ExecuteNonQuery();
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            var pseudoSQL = 0;
+            var emailSQL = 0;
+            string erreurMessage = "";
+            while (rdr.Read())
+            { 
+                pseudoSQL = (int)rdr.GetInt64(0);
+            }
+            rdr.Close();
+
+            if(pseudoSQL != 1)
+            {
+                string sqlEMAIL = "SELECT COUNT(*) FROM Compte WHERE email='" + email + "'";
+                var cmdEMAIL = new MySqlCommand(sqlEMAIL, con);
+                MySqlDataReader rdrEMAIL = cmdEMAIL.ExecuteReader();
+                while (rdrEMAIL.Read()) { emailSQL = (int)rdrEMAIL.GetInt64(0);}
+                rdrEMAIL.Close();
+                if (emailSQL != 1)
+                {
+                    if(password1 == password2)
+                    {
+                        string sqlInsertCompte = "INSERT INTO Compte(pseudo, mdp, email) values('"+pseudo+"', '"+password1+"', '"+email+"')";
+                        var cmdInsertCompte = new MySqlCommand(sqlInsertCompte, con);
+                        cmdInsertCompte.ExecuteNonQuery();
+                        Connexion.ToConnect(pseudo, password1Form.Value);
+                    }
+                    else{ erreurMessage = "Les mots de passe ne correspondent pas."; }
+                }
+                else { erreurMessage = "L'adresse email est déjà prise."; }
+            }
+            else{ erreurMessage = "Le pseudo est déjà pris."; }
+
             con.Close();
+            Response.Write(erreurMessage);
         }
     }
 }

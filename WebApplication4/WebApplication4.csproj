@@ -127,6 +127,8 @@
     <Content Include="WebUserControl1.ascx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connexion.cs" />
+    <Compile Include="DatabaseLogin.cs" />
     <Compile Include="Hasher.cs" />
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

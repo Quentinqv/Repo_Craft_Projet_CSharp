@@ -60,6 +60,33 @@ namespace WebApplication4
         protected global::System.Web.UI.WebControls.HyperLink textMoncompte;
 
         /// <summary>
+        /// Contrôle pseudoConnect.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText pseudoConnect;
+
+        /// <summary>
+        /// Contrôle passwordConnect.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword passwordConnect;
+
+        /// <summary>
+        /// Contrôle btnSubmit.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
+
+        /// <summary>
         /// Contrôle sinscrireLink.
         /// </summary>
         /// <remarks>
