@@ -8,6 +8,12 @@
         <input id="Text1" type="search" class="search-bar" placeholder="Rechercher un post ou un ami.." /><div class="elt-nav">
             <ul ID="BulletedList1" runat="server">
                 <li id="connexionPopup">
+                    <%
+                        HttpContext context = HttpContext.Current;
+                        /*Response.Write(context.Session["pseudo"]);*/
+                        if (context.Session["pseudo"] == null)
+                        {
+                    %>
                     <asp:HyperLink id="textMoncompte" runat="server" CssClass="link-header">Mon compte</asp:HyperLink>
                     <div id="divConnexion" runat="server">
                         <form>
@@ -26,6 +32,17 @@
                             <asp:HyperLink ID="sinscrireLink" runat="server" CssClass="link-header" NavigateUrl="~/inscription.aspx">S'inscrire !</asp:HyperLink>
                         </form>
                     </div>
+                    <%
+                        }
+                        else
+                        {
+                            /* context.Session["pseudo"] = "monpseudo";
+                             Response.Write(context.Session["pseudo"]);*/
+                            %>
+                    <a id="textMonProfil" class="link-header" href="profil.aspx?id=<% Response.Write(context.Session["id"]); %>">Mon profil</a>
+                    <%
+                        }
+                        %>
                 </li>
             </ul>
         </div>

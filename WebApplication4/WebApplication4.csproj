@@ -123,6 +123,7 @@
     <Content Include="index.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Images\logo.png" />
+    <Content Include="profil.aspx" />
     <Content Include="Web.config" />
     <Content Include="inscription.aspx" />
   </ItemGroup>
@@ -146,6 +147,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="profil.aspx.cs">
+      <DependentUpon>profil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profil.aspx.designer.cs">
+      <DependentUpon>profil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="inscription.aspx.cs">

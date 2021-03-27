@@ -17,7 +17,11 @@ namespace WebApplication4
         public static bool IsPost { get; }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            HttpContext context = HttpContext.Current;
+            if (context.Session["id"] != null)
+            {
+                Response.Redirect("index.aspx");
+            }
             //MySqlDataReader rdr = cmd.ExecuteReader();
 
         }

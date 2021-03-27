@@ -12,14 +12,12 @@ namespace WebApplication4
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			
+			/*HttpContext context = HttpContext.Current;
+			context.Session.Abandon();*/
 		}
 		protected void btnSubmit_Click_Connect(object sender, EventArgs e)
 		{
 			string output = Connexion.ToConnect(pseudoConnect.Value, passwordConnect.Value);
-            Response.Write(output);
-            Response.Write(Session["pseudo"]);
-            Response.Write(Session["email"]);
         }
 	}
 }

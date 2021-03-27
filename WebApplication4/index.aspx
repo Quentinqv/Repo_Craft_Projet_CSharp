@@ -5,7 +5,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="assets/css/reset.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous"/>
@@ -16,7 +16,7 @@
         <form id="form1" runat="server">
 
         <THeaderControl:HeaderControl ID="Header" runat="server"/>
-        
+
         <div class="file-actualite">
             <div class="each-post" data-idpost='0'>
                 <div class="minia-post" style="background-image: url('https://pcorrec.go.yo.fr/Craft/assets/img_posts/img5fda21dec6368.jpg')"></div>

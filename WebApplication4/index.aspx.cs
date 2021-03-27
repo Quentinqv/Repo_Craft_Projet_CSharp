@@ -13,8 +13,8 @@ namespace WebApplication4
 {
 	public partial class Index : System.Web.UI.Page
 	{
-		public object date;
 		public List<List<string>> results;
+		public List<List<string>> resultsPost;
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
@@ -34,15 +34,33 @@ namespace WebApplication4
 				l.Add(Convert.ToString(rdr.GetValue(1)));
 				results.Add(l);
 			}
-			con.Close();
+
+			rdr.Close();
 
 			namePost.Text = results[0][1];
 
 			/*Response.Write(Session["pseudo"]);
 			Response.Write(Session["email"]);*/
 
-			this.date = DateTime.Now;
+			sql = "SELECT Post.titre, Post.date_pub, Post.img_apercu, Compte.pseudo FROM Post NATURAL JOIN Compte";
+			cmd = new MySqlCommand(sql, con);
+			rdr = cmd.ExecuteReader();
 
+			List<List<string>> resultsPost = new List<List<string>>();
+
+			while (rdr.Read())
+			{
+				List<string> l = new List<string>();
+				l.Add(Convert.ToString(rdr.GetValue(0)));
+				l.Add(Convert.ToString(rdr.GetValue(1)));
+				l.Add(Convert.ToString(rdr.GetValue(2)));
+				l.Add(Convert.ToString(rdr.GetValue(3)));
+				resultsPost.Add(l);
+			}
+
+			/*Response.Write(resultsPost[0][0]);*/
+
+			con.Close();
 		}
 	}
 }
