@@ -298,7 +298,7 @@ header a {
     margin-top: 10px;
 }
 
-#Header_divConnexion input[type=submit], #div-deconnexion button, .each-post button, #non-connecte-popup button, #mdp-check-popup button, #addFriend, #disconnect, #modifierCompte {
+#Header_divConnexion input[type=submit], #div-deconnexion button, .each-post a, #non-connecte-popup button, #mdp-check-popup button, #addFriend, #disconnect, #modifierCompte {
     background-color: #CE253F;
     color: white;
     font-family: "Reef";
@@ -456,11 +456,12 @@ header a {
     margin-bottom: 15px;
 }
 
-.each-post button {
-    width: max-content;
+.each-post a {
     margin-left: 5%;
-    padding: 0px 20px 0px 20px;
+    padding: 10px 20px 10px 20px;
     margin-top: 25px;
+    text-decoration: none;
+    width: max-content;
 }
 
 .top-post div {

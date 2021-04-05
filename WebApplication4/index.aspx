@@ -17,7 +17,8 @@
 
         <THeaderControl:HeaderControl ID="Header" runat="server"/>
 
-        <div class="file-actualite">
+        <div class="file-actualite" id="allPost" runat="server">
+            <!--
             <div class="each-post" data-idpost='0'>
                 <div class="minia-post" style="background-image: url('https://pcorrec.go.yo.fr/Craft/assets/img_posts/img5fda21dec6368.jpg')"></div>
                 <div class="top-post">
@@ -46,8 +47,53 @@
                 </div>
                 <button>Voir plus</button>
             </div>
+            -->
         </div>
         </form>
+        <%
+            HttpContext context = HttpContext.Current;
+            if (context.Session["id"] != null)
+            {
+                %>
+                <script>
+                    $('.fa-heart').on('click', function () {
+                        let idCpt = "<% Response.Write(context.Session["id"]); %>"
+                        let idPoste = $(this).data('idpost')
+                        let current = $(this)
+
+                        $.ajax({
+                            type: "POST",
+                            url: "index.aspx/LikePost",
+                            data: JSON.stringify({ "idCpt": idCpt, "idPoste": idPoste }),
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function (response) {
+                                if (response.d == 'like') {
+                                    current.parent().find('.nb_like')[0].innerText = parseInt(current.parent().find('.nb_like')[0].innerText) + 1
+                                } else {
+                                    current.parent().find('.nb_like')[0].innerText = parseInt(current.parent().find('.nb_like')[0].innerText) - 1
+                                }
+                                current.toggleClass('rouge')
+                                current.toggleClass('gris')
+                            },
+                            failure: function (response) {
+                                alert(response.d);
+                            }
+                        });
+                    })
+                </script>
+        <%
+            } else
+            {
+                %>
+                <script>
+                    $('.fa-heart').on('click', function () {
+                        $('#Header_divConnexion').slideDown()
+                    })
+                </script>
+        <%
+            }
+            %>
         <script src="assets/script/main.js"></script>
     </body>
 </html>

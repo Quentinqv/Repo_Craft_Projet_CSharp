@@ -39,10 +39,7 @@ namespace ConnexionClass
 
 
                 string path = HttpContext.Current.Request.Url.AbsolutePath;
-                if (path.Contains("inscription"))
-                {
-                    HttpContext.Current.Response.Redirect("index.aspx");
-                }
+                HttpContext.Current.Response.Redirect("profil.aspx?id=" + sqlId);
                 return ("Reussie");
             }
 
