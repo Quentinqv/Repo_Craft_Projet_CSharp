@@ -24,13 +24,13 @@
                         if(context.Session["id"] != null && (string)idCpt != (string)context.Session["id"])
                         {
                     %>
-                    <asp:Button Text="Ajouter en ami" ID="addFriend" runat="server" OnClick="addFriend_Click" />
+                    <asp:Button Text="Ajouter en ami" ID="friend" runat="server" OnClick="friend_Click" />
                     <%
 
                         } else if ((string)idCpt == (string)context.Session["id"])
                         {
                             %>
-                            <asp:Button Text="Modifier" ID="modifierCompte" runat="server" OnClick="modifierCompte_Click" />
+                            <button>Modifier</button>
                             <asp:Button Text="Se déconnecter" ID="disconnect" runat="server" OnClick="disconnect_Click" />
                     <%
                         
@@ -43,16 +43,39 @@
                     <asp:Label ID="telId" runat="server"></asp:Label>
                     <asp:Label ID="dateInscriptionId" runat="server"></asp:Label>
                 </div>
+                <div id="formUpdate" runat="server">
+                    <asp:TextBox ID="emailCompteIdInput" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="dateNaisIdInput" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="telIdInput" runat="server"></asp:TextBox>
+                    <asp:Button Text="Mettre à jour" ID="updateBtn" runat="server" OnClick="update_Click" />
+                </div>
                 <div class="name-profil">
                     <h6><asp:Label ID="nbPubliId" runat="server"></asp:Label> publications</h6>
                     <h6><asp:Label ID="nbAmisId" runat="server"></asp:Label> amis</h6>
                 </div>
             </div>
-            <div id="post-profil">
+            <div id="amisProfil" runat="server">
+
+            </div>
+            <div id="postProfil" runat="server">
                 
             </div>
         </div>
     </form>
+    <script>
+        $('.post-profil').css('height', $('.post-profil').width());
+        $(window).resize(function () {
+            $('.post-profil').css('height', $('.post-profil').width());
+        });
+
+        $('.hover-post').hide();
+        $('.post-profil').hover(function () {
+            $(this).children().slideDown();
+        }, function () {
+            $(this).children().slideUp();
+        });
+
+    </script>
     <script src="assets/script/main.js"></script>
 </body>
 </html>

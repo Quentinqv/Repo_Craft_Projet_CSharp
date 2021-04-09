@@ -42,22 +42,13 @@ namespace WebApplication4
         protected global::System.Web.UI.WebControls.Label titreNom;
 
         /// <summary>
-        /// Contrôle addFriend.
+        /// Contrôle friend.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button addFriend;
-
-        /// <summary>
-        /// Contrôle modifierCompte.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button modifierCompte;
+        protected global::System.Web.UI.WebControls.Button friend;
 
         /// <summary>
         /// Contrôle disconnect.
@@ -105,6 +96,51 @@ namespace WebApplication4
         protected global::System.Web.UI.WebControls.Label dateInscriptionId;
 
         /// <summary>
+        /// Contrôle formUpdate.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl formUpdate;
+
+        /// <summary>
+        /// Contrôle emailCompteIdInput.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox emailCompteIdInput;
+
+        /// <summary>
+        /// Contrôle dateNaisIdInput.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox dateNaisIdInput;
+
+        /// <summary>
+        /// Contrôle telIdInput.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox telIdInput;
+
+        /// <summary>
+        /// Contrôle updateBtn.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button updateBtn;
+
+        /// <summary>
         /// Contrôle nbPubliId.
         /// </summary>
         /// <remarks>
@@ -121,5 +157,23 @@ namespace WebApplication4
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label nbAmisId;
+
+        /// <summary>
+        /// Contrôle amisProfil.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl amisProfil;
+
+        /// <summary>
+        /// Contrôle postProfil.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl postProfil;
     }
 }

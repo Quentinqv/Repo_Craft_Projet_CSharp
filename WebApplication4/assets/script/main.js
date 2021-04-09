@@ -1,6 +1,4 @@
 ﻿$(document).ready(function () {
-    $('#Header_divConnexion').hide()
-
     $('#Header_textMoncompte').on('click', function () {
         if ($('#Header_divConnexion').css('display') == 'none') {
             $('#Header_divConnexion').slideDown()

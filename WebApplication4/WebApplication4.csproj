@@ -124,6 +124,7 @@
     <Content Include="index.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Images\logo.png" />
+    <Content Include="poste.aspx" />
     <Content Include="profil.aspx" />
     <Content Include="Web.config" />
     <Content Include="inscription.aspx" />
@@ -148,6 +149,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="poste.aspx.cs">
+      <DependentUpon>poste.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poste.aspx.designer.cs">
+      <DependentUpon>poste.aspx</DependentUpon>
     </Compile>
     <Compile Include="profil.aspx.cs">
       <DependentUpon>profil.aspx</DependentUpon>

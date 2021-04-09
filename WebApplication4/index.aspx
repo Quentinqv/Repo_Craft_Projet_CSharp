@@ -87,13 +87,25 @@
             {
                 %>
                 <script>
-                    $('.fa-heart').on('click', function () {
-                        $('#Header_divConnexion').slideDown()
+                    $(document).ready(function () {
+                        $('.fa-heart').on('click', function () {
+                            $('#Header_divConnexion').slideDown()
+                        })
                     })
                 </script>
         <%
             }
             %>
+        <script>
+            <% 
+            if (Request.QueryString["login"] == "false")
+            {
+                %>
+            $('#Header_divConnexion').slideDown()
+                <%
+            }
+            %>
+        </script>
         <script src="assets/script/main.js"></script>
     </body>
 </html>

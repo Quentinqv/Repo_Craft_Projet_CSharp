@@ -120,7 +120,7 @@ header a {
     color: rgb(206, 37, 63);
 }
 
-#post-uniq .nb_like {
+#postUniq .nb_like {
     font-size: 30px;
     margin-right: 10px;
 }
@@ -298,7 +298,7 @@ header a {
     margin-top: 10px;
 }
 
-#Header_divConnexion input[type=submit], #div-deconnexion button, .each-post a, #non-connecte-popup button, #mdp-check-popup button, #addFriend, #disconnect, #modifierCompte {
+#friend, #Header_divConnexion input[type=submit], #div-deconnexion button, .each-post a, #non-connecte-popup button, #mdp-check-popup button, #addFriend, #disconnect, #modifierCompte {
     background-color: #CE253F;
     color: white;
     font-family: "Reef";
@@ -308,7 +308,7 @@ header a {
     cursor: pointer;
 }
 
-#addFriend, #disconnect, #modifierCompte {
+#addFriend, #disconnect, #modifierCompte, #friend {
     padding: 5px 30px 5px 30px;
 }
 
@@ -348,7 +348,7 @@ header a {
 
 /* File d actualite */
 
-#file-post, #profil, #post-uniq, #creation_post, #liste-groupes {
+#file-post, #profil, #postUniq, #creation_post, #liste-groupes {
     width: 40%;
     margin-left: auto;
     margin-right: auto;
@@ -426,12 +426,12 @@ header a {
         color: rgb(206, 37, 63);
     }
 
-#post-uniq .nb_like {
+#postUniq .nb_like {
     font-size: 30px;
     margin-right: 10px;
 }
 
-#post-uniq .top-post {
+#postUniq .top-post {
     margin-bottom: 15px;
 }
 
@@ -599,6 +599,18 @@ table tbody tr:nth-child(even) {
     margin-top: 15px;
 }
 
+#amisProfil {
+    margin-bottom: 20px;
+}
+
+#amisProfil a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Reef';
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
 .row {
     display: flex;
     justify-content: center;
@@ -696,7 +708,7 @@ h6 {
         justify-content: space-between;
     }
 
-#post-profil {
+#postProfil {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
@@ -706,6 +718,7 @@ h6 {
     background-position: center;
     background-size: cover;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .hover-post {
@@ -724,7 +737,7 @@ h6 {
         margin-right: 5px;
     }
 
-#post-uniq h3 {
+#postUniq h3 {
     font-size: 50px;
 }
 
