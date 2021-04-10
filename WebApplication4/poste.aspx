@@ -18,7 +18,11 @@
         <div id="postUniq" runat="server">
 
         </div>
-    </form>
+        <div id="addComment">
+            <h5>Ajouter un commentaire</h5>
+            <textarea name="add-com" id="textareaAddCom" runat="server"></textarea>
+            <asp:Button Text="Ajouter" ID="commenterBtn" runat="server" OnClick="commenter_Click" />
+        </div>
 
     <%
             HttpContext context = HttpContext.Current;
@@ -52,5 +56,7 @@
                 </script>
 
     <script src="assets/script/main.js"></script>
-</body>
+    </form>
+
+    </body>
 </html>

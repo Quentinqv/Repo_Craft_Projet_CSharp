@@ -30,7 +30,7 @@
                         } else if ((string)idCpt == (string)context.Session["id"])
                         {
                             %>
-                            <button>Modifier</button>
+                            <button type="button" id="modifierBtn">Modifier</button>
                             <asp:Button Text="Se déconnecter" ID="disconnect" runat="server" OnClick="disconnect_Click" />
                     <%
                         
@@ -43,7 +43,7 @@
                     <asp:Label ID="telId" runat="server"></asp:Label>
                     <asp:Label ID="dateInscriptionId" runat="server"></asp:Label>
                 </div>
-                <div id="formUpdate" runat="server">
+                <div id="formUpdate" runat="server" class="d-flex">
                     <asp:TextBox ID="emailCompteIdInput" runat="server"></asp:TextBox>
                     <asp:TextBox ID="dateNaisIdInput" runat="server"></asp:TextBox>
                     <asp:TextBox ID="telIdInput" runat="server"></asp:TextBox>
@@ -75,6 +75,22 @@
             $(this).children().slideUp();
         });
 
+        $('#modifierBtn').on('click', function () {
+            $('#formUpdate').slideToggle()
+            $('#formUpdate').toggleClass('flex')
+        })
+
+    </script>
+
+    <script>
+            <% 
+            if (Request.QueryString["update"] == "false")
+            {
+                %>
+            alert('Un des champs est vide !')
+                <%
+            }
+            %>
     </script>
     <script src="assets/script/main.js"></script>
 </body>

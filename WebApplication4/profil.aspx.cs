@@ -73,9 +73,12 @@ namespace WebApplication4
             telId.Text = "Téléphone: " + results[5];
             dateInscriptionId.Text = "Date d'inscription: " + results[6];
 
-            emailCompteIdInput.Text = results[2];
-            dateNaisIdInput.Text = results[3];
-            telIdInput.Text = results[5];
+            if (!IsPostBack)
+            {
+                emailCompteIdInput.Text = results[2];
+                dateNaisIdInput.Text = results[3];
+                telIdInput.Text = results[5];
+            }
 
             rdr.Close();
 
@@ -236,7 +239,24 @@ namespace WebApplication4
 
         protected void update_Click(object sender, EventArgs e)
         {
+            if (emailCompteIdInput.Text == "" || dateNaisIdInput.Text == "" || telIdInput.Text == "")
+            {
+                Response.Redirect(Request.Url.ToString()+"&update=false");
+            }
 
+            var con = Database.Connect();
+            con.Open();
+
+            HttpContext context = HttpContext.Current;
+
+            string[] dateNaisSplit = dateNaisIdInput.Text.Split('/');
+            string dateNais = dateNaisSplit[2] + "-" + dateNaisSplit[1] + "-" + dateNaisSplit[0];
+
+            string sql = "UPDATE Compte SET email=\""+ emailCompteIdInput.Text + "\", date_nais=\"" + dateNais + "\", tel=\"" + telIdInput.Text + "\" WHERE id_cpt=" + context.Session["id"];
+            var cmd = new MySqlCommand(sql, con);
+            cmd.ExecuteReader();
+
+            Response.Redirect(Request.Url.ToString());
         }
 
         protected void disconnect_Click(object sender, EventArgs e)

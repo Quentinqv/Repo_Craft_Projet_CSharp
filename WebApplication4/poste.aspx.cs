@@ -129,5 +129,19 @@ namespace WebApplication4
 
             postUniq.InnerHtml = output;
         }
+
+        protected void commenter_Click(object sender, EventArgs e)
+        {
+            var con = Database.Connect();
+            con.Open();
+
+            HttpContext context = HttpContext.Current;
+
+            string sql = "INSERT INTO Commentaire(id_post, id_cpt, contenu) values(" + Request.QueryString["id"] + ", " + context.Session["id"] + ", \""+ textareaAddCom.Value+ "\")";
+            var cmd = new MySqlCommand(sql, con);
+            cmd.ExecuteReader();
+
+            Response.Redirect(Request.Url.ToString());
+        }
     }
 }
