@@ -17,7 +17,7 @@ namespace WebApplication4
         protected void Page_Load(object sender, EventArgs e)
         {
             string idParam = Request.QueryString["id"];
-            if (idParam == null)
+            if (idParam == null || idParam == "")
             {
                 Response.Redirect("index.aspx");
             }
@@ -166,7 +166,7 @@ namespace WebApplication4
 
             postProfil.InnerHtml = output;
 
-            sql = "SELECT Compte.pseudo, Compte.id_cpt FROM LiaisonAmi NATURAL JOIN Compte WHERE id_cpt1=" + idParam + " || id_cpt2=" + idParam;
+            sql = "SELECT LiaisonAmi.id_cpt1, LiaisonAmi.id_cpt2 FROM LiaisonAmi INNER JOIN Compte ON Compte.id_cpt=LiaisonAmi.id_cpt1 WHERE LiaisonAmi.id_cpt1="+idParam+" || LiaisonAmi.id_cpt2="+idParam ;
             cmd = new MySqlCommand(sql, con);
             MySqlDataReader rdr4 = cmd.ExecuteReader();
 
@@ -174,23 +174,33 @@ namespace WebApplication4
 
             while (rdr4.Read())
             {
-                if (Convert.ToString(rdr4.GetValue(0)) != results[1])
-                {
-                    List<string> l = new List<string>();
-                    l.Add(Convert.ToString(rdr4.GetValue(0)));
-                    l.Add(Convert.ToString(rdr4.GetValue(1)));
-                    listAmis.Add(l);
-                }
-            }
-
-            string outputAmis = "<h6>Les amis:</h6>";
-
-            foreach (var item in listAmis)
-            {
-                outputAmis += "<a href=\"profil.aspx?id="+item[1]+"\">"+item[0]+"</a>";
+                List<string> l = new List<string>();
+                l.Add(Convert.ToString(rdr4.GetValue(0)));
+                l.Add(Convert.ToString(rdr4.GetValue(1)));
+                listAmis.Add(l);
             }
 
             rdr4.Close();
+
+
+            string outputAmis = "<h6>Les amis:</h6>";
+
+
+            foreach (var item in listAmis)
+            {
+                item.Remove(idParam);
+                sql = "SELECT Compte.pseudo FROM Compte WHERE id_cpt=" + item[0];
+                cmd = new MySqlCommand(sql, con);
+                MySqlDataReader rdr5 = cmd.ExecuteReader();
+                string pseudoAmi = "";
+                while (rdr5.Read())
+                {
+                    pseudoAmi = Convert.ToString(rdr5.GetValue(0));
+                }
+                rdr5.Close();
+                outputAmis += "<a href=\"profil.aspx?id="+item[0]+"\">"+pseudoAmi+"</a>";
+            }
+
 
             amisProfil.InnerHtml = outputAmis;
         }
@@ -235,6 +245,7 @@ namespace WebApplication4
                 nbAmisId.Text = Convert.ToString(v);
             }
 
+            Response.Redirect(Request.Url.ToString());
         }
 
         protected void update_Click(object sender, EventArgs e)

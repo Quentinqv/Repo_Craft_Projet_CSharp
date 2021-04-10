@@ -20,7 +20,7 @@ namespace WebApplication4
             }
 
             string idParam = Request.QueryString["id"];
-            if (idParam == null)
+            if (idParam == null || idParam == "")
             {
                 Response.Redirect("index.aspx");
             }

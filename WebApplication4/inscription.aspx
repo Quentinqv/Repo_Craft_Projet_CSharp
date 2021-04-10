@@ -14,16 +14,16 @@
 </head>
 <body>
     <form id="form2" runat="server">
-         <THeaderControl:HeaderControl ID="Header" runat="server"/>
-         <div>
+    <THeaderControl:HeaderControl ID="Header" runat="server"/>
+         <div runat="server">
              <h2>Inscription</h2>
-             <form id="formInscription">
+             <div id="formInscription" runat="server">
                  <input id="pseudoForm" name="pseudo" placeholder="Pseudo.." required="required" type="text" runat="server"/>
                  <input id="emailForm" name="email" placeholder="Email.." required="required" type="email" runat="server"/>
                  <input id="password1Form" minlength="8" name="password-1" placeholder="Mot de passe.." required="required" type="password" runat="server"/>
                  <input id="password2Form" minlength="8" name="password-2" placeholder="Confirmation du mot de passe.." required="required" type="password" runat="server"/>
-                 <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Submit" />
-             </form>
+                 <asp:Button Text="Submit" ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" />
+             </div>
          </div>
     </form>
     <script src="assets/script/main.js"></script>

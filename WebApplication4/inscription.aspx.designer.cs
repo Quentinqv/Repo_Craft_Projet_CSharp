@@ -33,6 +33,15 @@ namespace WebApplication4
         protected global::WebApplication4.header Header;
 
         /// <summary>
+        /// Contrôle formInscription.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl formInscription;
+
+        /// <summary>
         /// Contrôle pseudoForm.
         /// </summary>
         /// <remarks>
