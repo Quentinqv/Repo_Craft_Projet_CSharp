@@ -49,7 +49,7 @@ namespace WebApplication4
                 }
             }
 
-            string sql = "SELECT id_cpt, pseudo, email, DATE_FORMAT(date_nais, \"%d/%m/%Y\"), avatar, tel, DATE_FORMAT(date_inscription, \"%d/%m/%Y\") FROM Compte WHERE id_cpt=" + idParam;
+            string sql = "SELECT id_cpt, pseudo, email, DATE_FORMAT(date_nais, \"%d/%m/%Y\"), tel, DATE_FORMAT(date_inscription, \"%d/%m/%Y\") FROM Compte WHERE id_cpt=" + idParam;
             var cmd = new MySqlCommand(sql, con);
             MySqlDataReader rdr = cmd.ExecuteReader();
             List<string> results = new List<string>();
@@ -62,7 +62,6 @@ namespace WebApplication4
                 results.Add(Convert.ToString(rdr.GetValue(3)));
                 results.Add(Convert.ToString(rdr.GetValue(4)));
                 results.Add(Convert.ToString(rdr.GetValue(5)));
-                results.Add(Convert.ToString(rdr.GetValue(6)));
             }
 
             /*Response.Write(results[1]);*/
@@ -70,14 +69,14 @@ namespace WebApplication4
             titreNom.Text = results[1];
             emailCompteId.Text = "Email: "+results[2];
             dateNaisId.Text = "Date de naissance: " + results[3];
-            telId.Text = "Téléphone: " + results[5];
-            dateInscriptionId.Text = "Date d'inscription: " + results[6];
+            telId.Text = "Téléphone: " + results[4];
+            dateInscriptionId.Text = "Date d'inscription: " + results[5];
 
             if (!IsPostBack)
             {
                 emailCompteIdInput.Text = results[2];
                 dateNaisIdInput.Text = results[3];
-                telIdInput.Text = results[5];
+                telIdInput.Text = results[4];
             }
 
             rdr.Close();

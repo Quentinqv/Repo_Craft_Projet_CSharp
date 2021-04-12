@@ -34,6 +34,7 @@ header a {
     font-family: "Reef";
     text-decoration: none;
     font-size: 30px;
+    cursor: pointer;
 }
 
     .elt-nav a {
@@ -293,12 +294,12 @@ header a {
     padding: 5px;
 }
 
-#Header_divConnexion input[type=submit] {
+#Header_btnSubmit {
     width: 100%;
     margin-top: 10px;
 }
 
-#commenterBtn, #updateBtn, #modifierBtn, #friend, #Header_divConnexion input[type=submit], #div-deconnexion button, .each-post a, #non-connecte-popup button, #mdp-check-popup button, #addFriend, #disconnect, #modifierCompte {
+#Header_btnSubmit, #commenterBtn, #updateBtn, #modifierBtn, #friend, #div-deconnexion button, .each-post a, #non-connecte-popup button, #mdp-check-popup button, #addFriend, #disconnect, #modifierCompte {
     background-color: #CE253F;
     color: white;
     font-family: "Reef";

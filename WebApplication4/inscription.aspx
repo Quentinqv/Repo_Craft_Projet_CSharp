@@ -22,7 +22,7 @@
                  <input id="emailForm" name="email" placeholder="Email.." required="required" type="email" runat="server"/>
                  <input id="password1Form" minlength="8" name="password-1" placeholder="Mot de passe.." required="required" type="password" runat="server"/>
                  <input id="password2Form" minlength="8" name="password-2" placeholder="Confirmation du mot de passe.." required="required" type="password" runat="server"/>
-                 <asp:Button Text="Submit" ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" />
+                 <asp:Button Text="S'inscrire" ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" />
              </div>
          </div>
     </form>

@@ -44,9 +44,9 @@
                     <asp:Label ID="dateInscriptionId" runat="server"></asp:Label>
                 </div>
                 <div id="formUpdate" runat="server" class="d-flex">
-                    <asp:TextBox ID="emailCompteIdInput" runat="server"></asp:TextBox>
-                    <asp:TextBox ID="dateNaisIdInput" runat="server"></asp:TextBox>
-                    <asp:TextBox ID="telIdInput" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="emailCompteIdInput" runat="server" placeholder="Email"></asp:TextBox>
+                    <asp:TextBox ID="dateNaisIdInput" runat="server" placeholder="Date de naissance"></asp:TextBox>
+                    <asp:TextBox ID="telIdInput" runat="server" placeholder="Téléphone"></asp:TextBox>
                     <asp:Button Text="Mettre à jour" ID="updateBtn" runat="server" OnClick="update_Click" />
                 </div>
                 <div class="name-profil">

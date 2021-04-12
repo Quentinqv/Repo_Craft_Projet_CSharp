@@ -28,7 +28,7 @@
                                 <input type="password" id="passwordConnect" name="password" placeholder="Mot de passe..." runat="server">
                             </div>
                             <p>Mot de passe incorrect !</p>
-                            <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click_Connect" Text="Se connecter" />
+                            <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click_Connect" Text="Se connecter" UseSubmitBehavior="False" />
                             <asp:HyperLink ID="sinscrireLink" runat="server" CssClass="link-header" NavigateUrl="~/inscription.aspx">S'inscrire !</asp:HyperLink>
                         </div>
                     </div>
